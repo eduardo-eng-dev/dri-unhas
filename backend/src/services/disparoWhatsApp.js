@@ -63,7 +63,7 @@ export async function verificarClientesParaRetorno() {
       // Verificar se a data de retorno é hoje ou já passou
       if (dataRetorno <= hoje) {
         // Gerar link de agendamento (você pode personalizar isso depois)
-        const linkAgendamento = `http://localhost:5173/agendar?cliente=${clienteId}`;
+        const linkAgendamento = `https://dri-unhas-iota.vercel.app/agendar?cliente=${clienteId}`;
 
         const mensagem = `Olá ${atendimento.cliente.nome}! 💅
 
