@@ -1,0 +1,133 @@
+### Teste 1: Ping
+GET http://localhost:3000/ping
+
+### Teste 2: Listar clientes
+GET http://localhost:3000/api/clientes
+
+### Teste 3: Cadastrar cliente
+POST http://localhost:3000/api/clientes
+Content-Type: application/json
+
+{
+  "nome": "Maria Silva",
+  "telefone": "11999999999",
+  "observacoes": "Cliente preferencial"
+}
+
+### Teste 4: Cadastrar outro cliente
+POST http://localhost:3000/api/clientes
+Content-Type: application/json
+
+{
+  "nome": "Ana Souza",
+  "telefone": "11988888888"
+}
+
+### Teste 5: Listar clientes
+GET http://localhost:3000/api/clientes
+
+### Teste 6: Cadastrar serviço de Unhas
+POST http://localhost:3000/api/servicos
+Content-Type: application/json
+
+{
+  "nome": "Unhas",
+  "preco": 80.00,
+  "periodoRetornoDias": 15
+}
+
+### Teste 7: Cadastrar serviço de Cabelos
+POST http://localhost:3000/api/servicos
+Content-Type: application/json
+
+{
+  "nome": "Cabelos",
+  "preco": 120.00,
+  "periodoRetornoDias": 30
+}
+
+### Teste 8: Cadastrar serviço de Unhas + Cabelos
+POST http://localhost:3000/api/servicos
+Content-Type: application/json
+
+{
+  "nome": "Unhas + Cabelos",
+  "preco": 180.00,
+  "periodoRetornoDias": 15
+}
+
+### Teste 9: Listar serviços
+GET http://localhost:3000/api/servicos
+### Teste 10: Buscar serviço por ID (substitua pelo ID real)
+GET http://localhost:3000/api/servicos/accb01ba-1299-41ab-8789-2d8c2c4c30c3
+
+### Teste 11: Atualizar serviço (substitua pelo ID real)
+PUT http://localhost:3000/api/servicos/accb01ba-1299-41ab-8789-2d8c2c4c30c3
+Content-Type: application/json
+
+{
+  "nome": "Unhas Premium",
+  "preco": 100.00,
+  "periodoRetornoDias": 15
+}
+
+### Teste 12: Deletar serviço (substitua pelo ID real)
+DELETE http://localhost:3000/api/servicos/accb01ba-1299-41ab-8789-2d8c2c4c30c3
+
+### Teste 13: Criar agendamento
+POST http://localhost:3000/api/agendamentos
+Content-Type: application/json
+
+{
+  "clienteId": "0a482501-7324-4d94-b439-5c424c247781",
+  "servicoId": "accb01ba-1299-41ab-8789-2d8c2c4c30c3",
+  "dataAgendamento": "2026-09-20",
+  "horario": "14:00"
+}
+
+### Teste 14: Listar agendamentos
+GET http://localhost:3000/api/agendamentos
+
+### Teste 15: Listar horários disponíveis em uma data
+GET http://localhost:3000/api/agendamentos/disponiveis/2026-09-20
+
+### Teste 16: Tentar agendar horário ocupado (deve dar erro 409)
+POST http://localhost:3000/api/agendamentos
+Content-Type: application/json
+
+{
+  "clienteId": "76dd0a1f-c20e-42af-99fd-e9522df689fc",
+  "servicoId": "accb01ba-1299-41ab-8789-2d8c2c4c30c3",
+  "dataAgendamento": "2026-09-20",
+  "horario": "14:00"
+}
+### Teste 17: Registrar atendimento no histórico
+POST http://localhost:3000/api/historico
+Content-Type: application/json
+
+{
+  "clienteId": "0a482501-7324-4d94-b439-5c424c247781",
+  "servicoId": "618b7b8c-f9eb-432c-9a67-b10642c3ad71",
+  "observacoes": "Atendimento realizado com sucesso"
+}
+
+### Teste 18: Listar histórico
+GET http://localhost:3000/api/historico
+
+### Teste 19: Buscar histórico por cliente
+GET http://localhost:3000/api/historico/cliente/0a482501-7324-4d94-b439-5c424c247781
+
+### Teste 20: Listar notificações (clientes para retorno)
+GET http://localhost:3000/api/notificacoes
+
+### Teste: Agendamento público
+POST http://localhost:3000/api/agendamentos/publico
+Content-Type: application/json
+
+{
+  "nome": "Cliente Teste Público",
+  "telefone": "11966666666",
+  "servicoId": "accb01ba-1299-41ab-8789-2d8c2c4c30c3",
+  "dataAgendamento": "2026-09-25",
+  "horario": "14:00"
+}

@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+/* Fonte Poppins (opcional, mas deixa o visual mais bonito) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Suas configurações personalizadas podem vir aqui, se precisar */
+body {
+  font-family: 'Poppins', system-ui, sans-serif;
+  background-color: #FFF0F5; /* rosa-50 */
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FFE4EC; /* rosa-100 */
+}
+::-webkit-scrollbar-thumb {
+  background: #FF69B4; /* rosa-500 */
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF4DA6; /* rosa-600 */
+}
