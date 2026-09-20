@@ -1,6 +1,5 @@
 // src/components/Menu.tsx
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
 import driPerfil from '../assets/dri-perfil.png';
 
 interface MenuProps {

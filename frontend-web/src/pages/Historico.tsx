@@ -93,11 +93,7 @@ export default function Historico() {
       console.error('Erro ao deletar histórico:', error);
     }
   };
-
-  const formatarData = (data: string) => {
-    return new Date(data).toLocaleDateString('pt-BR');
-  };
-
+  
   const formatarDataHora = (data: string) => {
     return new Date(data).toLocaleString('pt-BR');
   };
