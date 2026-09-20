@@ -104,6 +104,15 @@ router.delete('/:id', async (req, res) => {
   try {
     const { id } = req.params;
 
+    // Deletar em cascata: primeiro os dependentes, depois o serviço
+    await prisma.agendamento.deleteMany({
+      where: { servicoId: id },
+    });
+
+    await prisma.historico.deleteMany({
+      where: { servicoId: id },
+    });
+
     await prisma.servico.delete({
       where: { id },
     });
