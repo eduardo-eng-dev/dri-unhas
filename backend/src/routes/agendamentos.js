@@ -290,6 +290,12 @@ router.post('/publico', async (req, res) => {
           observacoes: 'Cadastrada automaticamente via agendamento público',
         },
       });
+    } else {
+    // Se já existir, atualizar o nome (caso a cliente tenha digitado um nome diferente)
+    cliente = await prisma.cliente.update({
+      where: { id: cliente.id },
+      data: { nome },
+      });
     }
 
     // Criar o agendamento
